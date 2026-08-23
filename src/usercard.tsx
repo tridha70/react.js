@@ -1,3 +1,15 @@
+type UserCardProps = {
+  name: string
+  age: number
+  city: string
+  email: string
+  phone: string
+  occupation: string
+  address: string
+  hobbies: string
+  status: string
+}
+
 function UserCard({
   name,
   age,
@@ -8,7 +20,7 @@ function UserCard({
   address,
   hobbies,
   status,
-}) {
+}: UserCardProps) {
   return (
     <article className="user-card">
       <div className="user-card__header">
