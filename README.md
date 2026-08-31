@@ -43,6 +43,10 @@ Copy-Item "C:\Users\Administrator\Downloads\Screen Recording 2026-08-28 192438.m
 
 Then I can add a `Video` page and route that plays `/screen-recording.mp4`.
 
+Video page
+
+After copying your MP4 into `public/screen-recording.mp4`, open `/video` in the app to play it.
+
 Notes
 
 - If you see duplicate-import or parse errors, run `npx tsc --noEmit` to type-check and inspect the reported files.

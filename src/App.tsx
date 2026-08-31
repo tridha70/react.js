@@ -14,6 +14,7 @@ import ProductList from './pages/products/ProductList'
 import ProductDetails from './pages/products/ProductDetails'
 import Offers from './pages/products/Offers'
 import Contact from './pages/Contact'
+import Video from './pages/Video'
 
 function App() {
   const [theme] = useState<'light' | 'dark'>('light')
@@ -42,6 +43,7 @@ function App() {
             </Route>
 
             <Route path="contact" element={<Contact />} />
+            <Route path="video" element={<Video />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
