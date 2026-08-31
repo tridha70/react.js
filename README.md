@@ -1,3 +1,52 @@
+# MyApp — Routing & Nested Routing Demo
+
+This project demonstrates React Router DOM routing and nested routes using Vite + React.
+
+Getting started
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Run the development server:
+
+```bash
+npm run dev
+```
+
+Open http://localhost:5175/ (Vite may use another port).
+
+What this includes
+
+- Main menus/pages: Home, About, Services, Products, Contact
+- Nested routes:
+  - `Services` → Web Development, App Development, UI/UX Design
+  - `Products` → Product List, Product Details (dynamic `:id`), Offers
+- Navigation using `NavLink` with active highlighting
+- `Outlet` used for nested route rendering
+
+Files of interest
+
+- `src/App.tsx` — routing setup
+- `src/components/Navbar.tsx` — top navigation
+- `src/pages/*` — page components and nested pages
+
+Adding a video file
+
+If you want to embed a local MP4 into the app, copy it to the `public/` folder, for example:
+
+```powershell
+Copy-Item "C:\Users\Administrator\Downloads\Screen Recording 2026-08-28 192438.mp4" -Destination "D:\Reactjs-workspace\my-app\public\screen-recording.mp4"
+```
+
+Then I can add a `Video` page and route that plays `/screen-recording.mp4`.
+
+Notes
+
+- If you see duplicate-import or parse errors, run `npx tsc --noEmit` to type-check and inspect the reported files.
+- I ran the dev server locally; it is available at the Vite URL printed in the terminal.
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

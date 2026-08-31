@@ -1,25 +1,21 @@
 type UserCardProps = {
   name: string
-  age: number
-  city: string
+  role: string
+  company: string
+  experience: string
+  branch: string
   email: string
   phone: string
-  occupation: string
-  address: string
-  hobbies: string
-  status: string
 }
 
 function UserCard({
   name,
-  age,
-  city,
+  role,
+  company,
+  experience,
+  branch,
   email,
   phone,
-  occupation,
-  address,
-  hobbies,
-  status,
 }: UserCardProps) {
   return (
     <article className="user-card">
@@ -27,18 +23,26 @@ function UserCard({
         <div className="avatar">{name.charAt(0)}</div>
         <div>
           <h2>{name}</h2>
-          <span className="status-badge">{status}</span>
+          <span className="status-badge">{role}</span>
         </div>
       </div>
 
       <dl className="user-details">
         <div>
-          <dt>Age</dt>
-          <dd>{age}</dd>
+          <dt>Role</dt>
+          <dd>{role}</dd>
         </div>
         <div>
-          <dt>City</dt>
-          <dd>{city}</dd>
+          <dt>Company</dt>
+          <dd>{company}</dd>
+        </div>
+        <div>
+          <dt>Experience</dt>
+          <dd>{experience}</dd>
+        </div>
+        <div>
+          <dt>Branch</dt>
+          <dd>{branch}</dd>
         </div>
         <div>
           <dt>Email</dt>
@@ -47,18 +51,6 @@ function UserCard({
         <div>
           <dt>Phone</dt>
           <dd>{phone}</dd>
-        </div>
-        <div>
-          <dt>Occupation</dt>
-          <dd>{occupation}</dd>
-        </div>
-        <div>
-          <dt>Address</dt>
-          <dd>{address}</dd>
-        </div>
-        <div>
-          <dt>Hobbies</dt>
-          <dd>{hobbies}</dd>
         </div>
       </dl>
     </article>
