@@ -1,12 +1,12 @@
 type UserCardProps = {
-  name: string
-  role: string
-  company: string
-  experience: string
-  branch: string
-  email: string
-  phone: string
-}
+  name: string;
+  role: string;
+  company: string;
+  experience: string;
+  branch: string;
+  email: string;
+  phone: string;
+};
 
 function UserCard({
   name,
@@ -54,7 +54,7 @@ function UserCard({
         </div>
       </dl>
     </article>
-  )
+  );
 }
 
-export default UserCard
+export default UserCard;

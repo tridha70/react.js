@@ -1,15 +1,26 @@
-import React from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link } from "react-router-dom";
 
 const details: Record<string, { name: string; price: string; desc: string }> = {
-  '1': { name: 'Nimbus UI Kit', price: '$29', desc: 'A modern UI kit for building dashboards and apps.' },
-  '2': { name: 'Photon Analytics', price: '$59', desc: 'Lightweight analytics and reporting tools.' },
-  '3': { name: 'Atlas CMS', price: '$99', desc: 'Content management with a developer-friendly API.' },
-}
+  "1": {
+    name: "Nimbus UI Kit",
+    price: "$29",
+    desc: "A modern UI kit for building dashboards and apps.",
+  },
+  "2": {
+    name: "Photon Analytics",
+    price: "$59",
+    desc: "Lightweight analytics and reporting tools.",
+  },
+  "3": {
+    name: "Atlas CMS",
+    price: "$99",
+    desc: "Content management with a developer-friendly API.",
+  },
+};
 
 export default function ProductDetails() {
-  const { id } = useParams()
-  const product = id ? details[id] : undefined
+  const { id } = useParams();
+  const product = id ? details[id] : undefined;
 
   if (!product) {
     return (
@@ -22,7 +33,7 @@ export default function ProductDetails() {
           Back to products
         </Link>
       </div>
-    )
+    );
   }
 
   return (
@@ -38,5 +49,5 @@ export default function ProductDetails() {
         </Link>
       </div>
     </div>
-  )
+  );
 }

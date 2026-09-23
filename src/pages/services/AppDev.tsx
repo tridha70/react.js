@@ -1,4 +1,3 @@
-import React from 'react'
 
 export default function AppDev() {
   return (
@@ -10,5 +9,5 @@ export default function AppDev() {
         Native-like mobile apps and cross-platform solutions built with care.
       </p>
     </div>
-  )
+  );
 }

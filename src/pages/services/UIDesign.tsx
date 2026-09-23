@@ -1,4 +1,3 @@
-import React from 'react'
 
 export default function UIDesign() {
   return (
@@ -10,5 +9,5 @@ export default function UIDesign() {
         Design systems, interaction patterns and delightful user experiences.
       </p>
     </div>
-  )
+  );
 }

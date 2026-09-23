@@ -1,37 +1,37 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from "react";
 
 const DEFAULT_IMAGE =
-  'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80'
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80";
 
 export default function ProfileCard() {
-  const inputRef = useRef<HTMLInputElement | null>(null)
-  const [preview, setPreview] = useState<string>(DEFAULT_IMAGE)
-  const [likeCount, setLikeCount] = useState<number>(0)
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const [preview, setPreview] = useState<string>(DEFAULT_IMAGE);
+  const [likeCount, setLikeCount] = useState<number>(0);
 
   const handleUploadClick = () => {
-    inputRef.current?.click()
-  }
+    inputRef.current?.click();
+  };
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]
-    if (!file) return
+    const file = event.target.files?.[0];
+    if (!file) return;
 
-    const nextUrl = URL.createObjectURL(file)
+    const nextUrl = URL.createObjectURL(file);
     setPreview((currentPreview) => {
-      if (currentPreview.startsWith('blob:')) {
-        URL.revokeObjectURL(currentPreview)
+      if (currentPreview.startsWith("blob:")) {
+        URL.revokeObjectURL(currentPreview);
       }
-      return nextUrl
-    })
-  }
+      return nextUrl;
+    });
+  };
 
   useEffect(() => {
     return () => {
-      if (preview.startsWith('blob:')) {
-        URL.revokeObjectURL(preview)
+      if (preview.startsWith("blob:")) {
+        URL.revokeObjectURL(preview);
       }
-    }
-  }, [preview])
+    };
+  }, [preview]);
 
   return (
     <div className="profile-card">
@@ -65,5 +65,5 @@ export default function ProfileCard() {
 
       <div className="like-count">Likes: {likeCount}</div>
     </div>
-  )
+  );
 }

@@ -1,4 +1,3 @@
-import React from 'react'
 
 export default function Offers() {
   return (
@@ -12,5 +11,5 @@ export default function Offers() {
         <li>Free migration support with Atlas CMS (first month)</li>
       </ul>
     </div>
-  )
+  );
 }

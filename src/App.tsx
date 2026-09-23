@@ -1,56 +1,42 @@
-import React, { useState } from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import './App.css'
-
-import Navbar from './components/Navbar'
-import Home from './pages/Home'
-import About from './pages/About'
-import Services from './pages/Services'
-import WebDev from './pages/services/WebDev'
-import AppDev from './pages/services/AppDev'
-import UIDesign from './pages/services/UIDesign'
-import Products from './pages/Products'
-import ProductList from './pages/products/ProductList'
-import ProductDetails from './pages/products/ProductDetails'
-import Offers from './pages/products/Offers'
-import Contact from './pages/Contact'
-import Video from './pages/Video'
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { Provider } from "react-redux";
+import { ThemeProvider } from "./context/ThemeContext";
+import { store } from "./store/store";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import Profile from "./pages/Profile";
+import ServiceDetail from "./pages/services/ServiceDetail";
+import Bookings from "./pages/Bookings";
+import SearchResults from "./pages/SearchResults";
+import "./App.css";
 
 function App() {
-  const [theme] = useState<'light' | 'dark'>('light')
-
   return (
-    <BrowserRouter>
-      <div className={`app-shell ${theme}`}>
-        <Navbar />
-        <main className="app-content">
+    <Provider store={store}>
+      <ThemeProvider>
+        <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="about" element={<About />} />
-
-            <Route path="services" element={<Services />}>
-              <Route index element={<WebDev />} />
-              <Route path="web" element={<WebDev />} />
-              <Route path="app" element={<AppDev />} />
-              <Route path="ui" element={<UIDesign />} />
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />}>
+                <Route index element={<ServiceDetail />} />
+                <Route path=":slug" element={<ServiceDetail />} />
+              </Route>
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/bookings" element={<Bookings />} />
+              <Route path="/search" element={<SearchResults />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Route>
-
-            <Route path="products" element={<Products />}>
-              <Route index element={<ProductList />} />
-              <Route path="list" element={<ProductList />} />
-              <Route path=":id" element={<ProductDetails />} />
-              <Route path="offers" element={<Offers />} />
-            </Route>
-
-            <Route path="contact" element={<Contact />} />
-            <Route path="video" element={<Video />} />
-
-            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
-        </main>
-      </div>
-    </BrowserRouter>
-  )
+        </BrowserRouter>
+      </ThemeProvider>
+    </Provider>
+  );
 }
 
-export default App
+export default App;

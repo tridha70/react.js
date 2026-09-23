@@ -1,4 +1,3 @@
-import React from 'react'
 
 export default function WebDev() {
   return (
@@ -7,8 +6,9 @@ export default function WebDev() {
         <h2>Web Development</h2>
       </header>
       <p style={{ marginTop: 12 }}>
-        We build responsive, accessible, and fast web applications using modern React patterns.
+        We build responsive, accessible, and fast web applications using modern
+        React patterns.
       </p>
     </div>
-  )
+  );
 }
